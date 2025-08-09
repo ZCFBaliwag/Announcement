@@ -2,54 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Auto-Play Fullscreen Video</title>
+  <title>Video Overlay</title>
   <style>
-    * {
+    body, html {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      width: 100%;
       height: 100%;
       overflow: hidden;
     }
 
-    video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
+    .video-container {
+      position: relative;
+      width: 100%;
       height: 100vh;
-      object-fit: cover;
-      z-index: -1;
     }
 
-    .content {
-      position: relative;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 64px;
+      font-weight: bold;
       color: white;
-      text-align: center;
-      font-size: 2rem;
-      padding-top: 20vh;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      pointer-events: none; /* allows clicks to go through the text to the video */
     }
   </style>
 </head>
 <body>
 
-  <video autoplay loop muted playsinline preload="auto">
-    <source src="announcement.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-<!--   <div style="background: black; color: white; text-align: center; padding-top: 20vh;">
-  <h1>Testing if site works</h1>
-</div> -->
-
-
-<!--   <div class="content">
-    <h1>Welcome to My Video Page</h1>
-  </div> -->
+  <div class="video-container">
+    <video autoplay muted loop>
+      <source src="your-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay-text">NEED TO UPDATE</div>
+  </div>
 
 </body>
 </html>
