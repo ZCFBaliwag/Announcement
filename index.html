@@ -24,16 +24,24 @@
     }
 
     .overlay-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 64px;
-      font-weight: bold;
-      color: black;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-      pointer-events: none; /* allows clicks to go through the text to the video */
-    }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  font-weight: bold;
+  color: black;
+  pointer-events: none;
+
+  /* White outline using multiple text-shadows */
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white,
+     2px  2px 8px rgba(0, 0, 0, 0.7); /* original shadow */
+}
+
   </style>
 </head>
 <body>
